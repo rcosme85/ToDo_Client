@@ -1,0 +1,95 @@
+
+.registerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    width: 40vw;
+    background-color: #b5b5b5;
+  }
+  
+  .registerBox {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 90%;
+    
+  }
+  .exitContainer {
+    display: flex;
+    justify-content:end;
+    
+  }
+  
+  .loginTitle {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: black
+    
+  }
+  
+  .inputContainer {
+    margin-bottom: 20px;
+  }
+  
+  .inputContainer label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333333;
+  }
+  
+  .inputContainer input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    background-color: #b5b5b5;
+    color: black;
+     margin-top: 20px;
+  }
+  
+  .error {
+    color: #e53e3e;
+    margin-top: 5px;
+  }
+  
+  .buttonContainer {
+    text-align: center;
+    display: flex;
+    justify-content:space-between;
+    margin-top: 10px;
+  }
+  
+  .button {
+    background-color: green; 
+    color: white; 
+    padding: 10px 20px; 
+    font-size: 14px; 
+    width: 120px;
+     border: none;
+    border-radius: 5px; 
+    cursor: pointer; 
+  }
+  
+  .createAccount {
+    margin-top: 10px;
+  }
+  .parrafo{
+    color:black;
+    display: flex;
+    justify-content: end;
+    font-size: 12px;
+  }
+  .createAccountLink {
+    
+    background-color: rgb(27, 61, 232);
+  color: #ffffff;
+  padding: 10px 20px; 
+  font-size: 14px; 
+  width: 120px;
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  }

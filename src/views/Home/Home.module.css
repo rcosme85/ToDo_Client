@@ -1,0 +1,57 @@
+
+.containerNav{
+  width: 100%;
+  height: 40px;
+  background-color: rgb(159, 160, 161);
+  display: flex;
+  justify-content:end;
+  padding: 10px;
+  border-radius: 5px 5px 0px 0px;
+
+}
+.containerButton{
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 5px;
+}
+.containerCategory{
+  background-color: rgb(159, 160, 161);
+  display: flex;
+  
+}
+.containerToDo{
+  background-color:rgb(115, 116, 117);
+  border-radius: 0px 0px 5px 5px;
+
+}
+.button {
+    border-radius: 3px;
+    height:30px;
+    width: 130px;
+    font-size: 13px;
+    margin: 5px;
+    /* padding: 8px 16px; */
+    text-align: center;
+    color: whitesmoke;
+    /* padding: 10px 20px; */
+    background-color: darkslategray;
+    box-shadow: 0 5px 5px rgb(52, 49, 49);
+    padding-top: 5px;
+    &:hover {
+        color: rgb(4, 21, 21);
+        background-color: rgb(10, 121, 68);
+        box-shadow: 0 5px 5px darkslategray;
+    }
+}
+
+.userProfile {
+  margin-right: 10px;
+}
+
+.userProfile span {
+  font-size: 13px;
+  color: rgb(1, 170, 1)
+}

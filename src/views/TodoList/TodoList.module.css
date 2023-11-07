@@ -1,0 +1,196 @@
+* {
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.contenedorPrincipal {
+
+  width: 100%;
+  height: calc(100vh - 100px);
+  color: #040404;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.buttonSearch{
+  border-radius: 3px;
+    height:30px;
+    width: 130px;
+    font-size: 13px;
+    margin: 5px;
+    text-align: center;
+    color: whitesmoke;
+    background-color: darkslategray;
+    box-shadow: 0 5px 5px rgb(52, 49, 49);
+    padding-top: 5px;
+    &:hover {
+        color: rgb(195, 233, 233);
+        background-color: rgb(3, 55, 30);
+        box-shadow: 0 5px 5px rgb(153, 179, 179);
+    }
+}
+.contenedorSelect {
+  background-color: #9a9696;
+  height: 45px;
+  width: 350px;
+  border-radius: 5px;
+  margin-bottom: 40px;
+
+}
+.contenedorSelect select{
+  width: 150px;
+  height:30px;
+  margin-bottom: 20px;
+  margin-right: 5px;
+}
+
+.contenedorInput {
+  background-color: #9a9696;
+  height: 50px;
+  width: 700px;
+  border-radius: 5px;
+
+}
+.inputSubmit{
+  color:white;
+  background-color: darkslategray;;
+   &:hover {
+        color: rgb(195, 233, 233);
+        background-color: rgb(3, 55, 30);
+        box-shadow: 0 5px 5px rgb(153, 179, 179);
+   }
+}
+.contenedorInput select{
+  width: 150px;
+  height:30px;
+  margin-top: 10px;
+  margin-right: 5px;
+}
+
+.contenedorInput input{
+  width: 170px;
+  height:30px;
+  margin-top: 10px;
+  margin-right: 5px;
+}
+
+.contenedorCaja{
+  width:100% ;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0,0,0,.5);
+  border-radius: 5px;
+  padding: 3px;
+  margin-top: 5px;
+  
+}
+.contenedorTodo{
+  background-color: #cec8c8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #7f7d7d;
+  border-radius: 3px;
+}
+
+.contenedorTodo h5{
+ padding-left: 50px;
+ font-size: 18px;
+}
+
+.buttonDelete {
+  background: #e23333;
+  font-size: 13px;
+  ;
+}
+/* Item format */
+.conteinerItems{
+  display: flex;
+  justify-content:space-between;
+  height: 50px;
+  align-items:center;
+  border: 1px solid #aea9a9;
+  text-align: left;
+  font-size: 15px;
+}
+
+.conteinerItems p{
+  color:blue;
+  
+
+}
+.conteinerItems span{
+  color:rgb(7, 7, 7);
+
+}
+ .conteinerEdit{
+  text-align: right;
+}
+
+.conteinerEdit button {
+  margin-right: 3px;
+  width: 40px;
+  height: 30px;
+  text-align: center;
+  padding-right: 10px;
+  padding-top: 5px;
+}
+.strikethrough {
+  text-decoration: line-through;
+  color: red
+  
+}
+.conteinerEdit span{
+  color:red;
+  font-size: 14px;
+   font-weight: bold; 
+  text-decoration: line-through;
+}
+
+.checkBox {
+  margin-left: 2px;
+}
+
+.paragraph{
+  padding: 0;
+  flex-grow:1;
+}
+
+/* totales */
+.containerTotal{
+  background-color: #7f7d7d;
+  font-weight: bold;
+  font-size: 15px;
+}
+.containerModel{
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+  
+}
+
+.containerModelDiv{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.btnDanger {
+  background-color: #e23333;
+  margin-right: 5px;
+  width: 130px;
+  height: 50px;
+  font-size: 14px;
+}
+
+.btnSuccess {
+  background-color: green;
+  height: 50px;
+   width: 130px;
+   padding-bottom: 20px;
+    font-size: 14px;
+
+}
