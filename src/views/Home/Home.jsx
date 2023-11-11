@@ -14,9 +14,9 @@ function Home() {
     // const storedUser = JSON.parse(localStorage.getItem("userId"));
     const id = localStorage.getItem("userId");
     const name = localStorage.getItem("name")
-    console.log("UserID del Local Storage")
-    console.log(id)
-    console.log(name)
+   // console.log("UserID del Local Storage")
+    //console.log(id)
+    //console.log(name)
       if (id) {
         setUserId(id);
         setUserName(name)
@@ -34,41 +34,47 @@ function Home() {
 
   return (
     <div>
-      <div className={styles.containerNav}>
-        <nav>
-          
-          <div className={styles.containerButton}>
-            <div>
+      {/* <div className={styles.containerNav}>
+      
+      </div> */}
+      <header>
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+          {/* {styles.containerButton} */}
+          <div className="container">
+            <div className="align-items-center">
               {!user ? (
                 <NavLink to="/login">
-                  <button className={styles.button}>Login</button>
+                  <button className="btn btn-primary">Login</button>
                 </NavLink>
               ) : (
-                // Mostrar el nombre del usuario 
+                // Mostrar el nombre del usuario
                 <div>
                   <div className={styles.userProfile}>
                     <span>{userName}</span>
                   </div>
-                  <button onClick={handleLogout} className={styles.button}>
+                  <button onClick={handleLogout} className="btn btn-danger">
                     Sign Out
                   </button>
                 </div>
               )}
             </div>
-          
+            <div>
+              <NavLink to="/category">
+                <button className="btn btn-primary">Create Category</button>
+              </NavLink>
+            </div>
           </div>
         </nav>
-      </div>
-      <section className={styles.containerCategory}>
-        <div>
-          <NavLink to="/category">
-            <button className={`${styles.button}`}>Create Category</button>
-          </NavLink>
+      </header>
+      {/* Titulo */}
+      <div className="row py-3">
+        <div className="col">
+          <div className="border-bottom">
+            <h2>ToDo Application</h2>
+          </div>
         </div>
-      </section>
-      <section className={styles.containerToDo}>
-        <h2>ToDo Application</h2>
-      </section>
+      </div>
+
       <section>
         <TodoList />
       </section>

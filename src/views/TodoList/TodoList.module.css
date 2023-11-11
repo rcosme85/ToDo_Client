@@ -107,13 +107,15 @@
 }
 /* Item format */
 .conteinerItems{
-  display: flex;
+  border: 1px solid #161515;
+  /* background-color: black; */
+ /*  display: flex;
   justify-content:space-between;
   height: 50px;
   align-items:center;
-  border: 1px solid #aea9a9;
+  
   text-align: left;
-  font-size: 15px;
+  font-size: 15px; */
 }
 
 .conteinerItems p{
@@ -121,6 +123,11 @@
   
 
 }
+
+.checkboxBorder{
+  border: 1px solid #aea9a9;
+}
+
 .conteinerItems span{
   color:rgb(7, 7, 7);
 
