@@ -104,8 +104,6 @@ export default function LoginForm() {
           "http://localhost:3001/todoApp/users/loginGoogle",
           userData
         );
-        /* console.log("datos Get o Create Google User");
-        console.log(response.data); */
 
         if (!response.data.error) {
           window.alert("Successful login");
@@ -136,64 +134,80 @@ export default function LoginForm() {
   };
 
   return (
-    <div className={styles.loginContainer}>
-      <div className={styles.loginBox}>
-        <div className={styles.exitContainer}>
+    <div className="container w-50 bg-secondary">
+
+      <div className="row w-80">
+
+        <div className="col-12 d-flex justify-content-end">
           <button onClick={handleExit}>x</button>
         </div>
-        <h2 className={styles.loginTitle}>Login</h2>
+
+        <div className="col-12">
+          <h2 className="fs-2 mb-5">Login</h2>
+        </div>
+
         {/* GoogleLogin */}
-        <div>
+        <div className="col-12">
           <GoogleLogin
             clientId={clientID}
             onSuccess={onSuccess}
             onFailure={onFailure}
-            cookiePolicy='single_host_policy'
+            cookiePolicy="single_host_policy"
           />
         </div>
 
-        <form>
-          <div className={styles.inputContainer}>
-            <label className={styles.label}>Email</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              autoComplete="email"
-              className={styles.input}
-              onChange={handleChange}
-              required
-            />
-          </div>
+        <div className="col">
+          <form >
+            <div className="row">
+              <div className="col-6 col-md-12">
+                <label className="form-label mt-5">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  autoComplete="email"
+                  className="form-control"
+                  onChange={handleChange}
+                  required
+                />
+              </div>
 
-          <div className={styles.inputContainer}>
-            <label className={styles.label}>Password</label>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              autoComplete="password"
-              className={styles.input}
-              onChange={handleChange}
-              required
-            />
-          </div>
+              <div className="col-6 col-md-12">
+                <label className="form-label mt-5">Password</label>
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  autoComplete="password"
+                  className="form-control"
+                  onChange={handleChange}
+                  required
+                />
+                {error && <p className="text-danger">{error}</p>}
+              </div>
 
-          {error && <p className={styles.error}>{error}</p>}
-          <div className={styles.parrafo}>
-            <p>If you don't have an account</p>
-          </div>
-          <div className={styles.buttonContainer}>
-            <button onClick={handleSubmit} className={styles.button}>
-              Enter
-            </button>
-            <div className={styles.createAccount}>
-              <Link to="/register" className={styles.createAccountLink}>
-                create Account
-              </Link>
+              <div className="col-12 d-flex justify-content-end">
+                <p className="mt-5">If you don't have an account</p>
+              </div>
             </div>
-          </div>
-        </form>
+
+            <div className="row">
+              <div className="col-6">
+                <button onClick={handleSubmit} className="btn btn-success">
+                  Sign In
+                </button>
+              </div>
+
+              <div className="col-6">
+                <Link to="/register" className={styles.createAccountLink}>
+                  Register
+                </Link>
+              </div>
+
+            </div>
+          </form>
+        </div>
+
       </div>
     </div>
   );
