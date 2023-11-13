@@ -26,7 +26,8 @@ const TodoList = () => {
 
 
   useEffect(() => {
-
+    
+    if (userId !== null) {
       axios
         .get(`http://localhost:3001/todoApp/todo/${userId}`)
         .then((response) => {
@@ -35,6 +36,7 @@ const TodoList = () => {
           
         })
         .catch((error) => console.error(error));
+    }
 
   }, [newData]);
 

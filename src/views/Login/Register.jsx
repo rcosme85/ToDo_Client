@@ -84,7 +84,7 @@ export default function LoginForm() {
           email: "",
           password: "",
           confirmPassword: "",
-          admin: false,
+          // admin: false,
         });
 
         document.getElementById("name").value = "";

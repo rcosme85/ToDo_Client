@@ -12,17 +12,9 @@ export default function LoginForm() {
     password: "",
   });
 
-  const [userGoogle, setUserGoogle] = useState({
-    name: "",
-    lastName: "",
-    email: "",
-    password: "",
-  });
-
   const [access, setAccess] = useState(false);
   const [error, setError] = useState("");
   const [exit, setExit] = useState(false);
-  const [user, setUser] = useState({})
 
   const clientID =
     "860864085664-nvtrk53l5rbi2vqmk8f6j46ib48l73ck.apps.googleusercontent.com";
@@ -52,9 +44,7 @@ export default function LoginForm() {
   }, [])
 
   const onSuccess = (response) => {
-    //setUser(response.profileObj)
-    //console.log("Google-Login")
-    //console.log(response)
+    // setUser(response.profileObj)
     const user = response.profileObj
     loginByGoogle(user)
     
@@ -101,43 +91,41 @@ export default function LoginForm() {
   //Login with Google
   const loginByGoogle = async(user) => {
     //e.preventDefault();
-
     try {
-      setUserGoogle({
-        name: user.name,
-        lastName: user.familyName,
-        email: user.email,
-        password: "12345",
-      });
+      if (user.email !== "") {
+        const userData = {
+          name: user.givenName,
+          lastName: user.familyName,
+          email: user.email,
+          password: user.googleId,
+        };
+        //Si no está grabado el usuariod de google crearlo
+        const response = await axios.post(
+          "http://localhost:3001/todoApp/users/loginGoogle",
+          userData
+        );
+        /* console.log("datos Get o Create Google User");
+        console.log(response.data); */
 
-      //Si no está grabado el usuariod de google crearlo
-      //FALTA MODIFICAR O CREAR UN CONTROLLER MÁS
-      const response = await axios.post(
-        "http://localhost:3001/todoApp/users",
-        userGoogle
-      );
+        if (!response.data.error) {
+          window.alert("Successful login");
+          
+          document.getElementById("email").value = "";
+          document.getElementById("password").value = "";
 
-      if (!response.data.error) {
-        window.alert("Successful login");
-        setUserGoogle({
-          name: "",
-          lastName: "",
-          email: "",
-          password: "",
-        });
+          localStorage.setItem("userId", response.data.data.id);
+          localStorage.setItem("name", response.data.data.name);
 
-        document.getElementById("email").value = "";
-        document.getElementById("password").value = "";
-
-        localStorage.setItem("userId", response.data.data.id);
-        localStorage.setItem("name", response.data.data.name);
-        
-        setAccess(true);
-
+          setAccess(true);
+        } else {
+          setAccess(false);
+          window.alert("Invalid credentials");
+        }
       } else {
         setAccess(false);
         window.alert("Invalid credentials");
       }
+      
     } catch (error) {
   
       window.alert("Invalid credentials");
