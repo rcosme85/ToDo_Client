@@ -123,7 +123,7 @@ export default function LoginForm() {
           <button onClick={handleExit}>x</button>
         </div>
         <h2 className={styles.loginTitle}>Create Account</h2>
-        <form>
+        <form className ={styles.form}>
           <div className={styles.inputContainer}>
             <div>
               <input

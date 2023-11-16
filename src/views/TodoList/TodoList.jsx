@@ -220,9 +220,9 @@ let completeCount = data?.filter((todo) => todo.isComplete === true).length;
   return (
     // className={styles.contenedorPrincipal}
     <div className="container w-100">
-      <div className="row mt-3">
+      <div className="row mt-3 justify-content-center">
         {/* {styles.contenedorSelect} */}
-        <div className="col-6 mb-3 d-flex justify-content-center">
+        <div className="col-6 mb-5 d-flex justify-content-center shadow">
           <select
             name="CategoryId"
             id="Category"
@@ -405,9 +405,7 @@ let completeCount = data?.filter((todo) => todo.isComplete === true).length;
         onClose={() => setModalEliminar({ isOpen: false, todo: {} })}
       >
         <div className="container text-center py-5">
-          <h4>
-            Do you want to delete task? {modalEliminar.todo.title}
-          </h4>
+          <h4>Do you want to delete task? {modalEliminar.todo.title}</h4>
           <div className="w-100 d-flex justify-content-center mt-5">
             <button
               className="btn btn-danger mx-1"

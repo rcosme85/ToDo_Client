@@ -134,20 +134,21 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="container w-50 bg-secondary">
-
-      <div className="row w-80">
-
-        <div className="col-12 d-flex justify-content-end">
-          <button onClick={handleExit}>x</button>
+    <div className="container w-50 border shadow">
+      <div className="row">
+        <div className="col-12 d-flex justify-content-end mt-1">
+          <button className="btn btn-secondary" onClick={handleExit}>
+            x
+          </button>
         </div>
 
         <div className="col-12">
-          <h2 className="fs-2 mb-5">Login</h2>
+          <h2 className="fs-2 mb-3">Login</h2>
         </div>
 
         {/* GoogleLogin */}
         <div className="col-12">
+          <p>You can Login with your Google Account</p>
           <GoogleLogin
             clientId={clientID}
             onSuccess={onSuccess}
@@ -156,11 +157,12 @@ export default function LoginForm() {
           />
         </div>
 
-        <div className="col">
-          <form >
-            <div className="row">
-              <div className="col-6 col-md-12">
-                <label className="form-label mt-5">Email</label>
+        <div className="col mt-2">
+          <p>--Or--</p>
+          <form className='border shadow'>
+            <div className="row justify-content-center">
+              <div className="col-8">
+                <label className="form-label mt-3">Email</label>
                 <input
                   type="email"
                   name="email"
@@ -170,10 +172,10 @@ export default function LoginForm() {
                   onChange={handleChange}
                   required
                 />
-              </div>
+                {/* </div> */}
 
-              <div className="col-6 col-md-12">
-                <label className="form-label mt-5">Password</label>
+                {/* <div className="col-6"> */}
+                <label className="form-label mt-3">Password</label>
                 <input
                   type="password"
                   name="password"
@@ -186,14 +188,14 @@ export default function LoginForm() {
                 {error && <p className="text-danger">{error}</p>}
               </div>
 
-              <div className="col-12 d-flex justify-content-end">
-                <p className="mt-5">If you don't have an account</p>
+              <div className="col-12 d-flex justify-content-end mt-3">
+                <p className={styles.parrafoRegister}>If you don't have an account</p>
               </div>
             </div>
 
             <div className="row">
               <div className="col-6">
-                <button onClick={handleSubmit} className="btn btn-success">
+                <button onClick={handleSubmit} className="btn btn-success mb-3">
                   Sign In
                 </button>
               </div>
@@ -203,11 +205,10 @@ export default function LoginForm() {
                   Register
                 </Link>
               </div>
-
             </div>
           </form>
+          <p className={styles.parrafoFinal}>By Sign In or Signup using Google or Our login Form, You are agreeing to our Terms of Use and Privacy Policy</p>
         </div>
-
       </div>
     </div>
   );
